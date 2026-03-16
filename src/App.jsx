@@ -1,11 +1,27 @@
+import { useEffect, useState } from 'react'
+import { supabase } from './supabaseClient'
+import Login from './Login'
+import Board from './Board'
+
 function App() {
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold text-center pt-10">
-        Job Tracker
-      </h1>
-    </div>
-  )
+  const [session, setSession] = useState(null)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
+
+  if (!session) {
+    return <Login />
+  }
+
+  return <Board session={session}/>
+
 }
 
 export default App
