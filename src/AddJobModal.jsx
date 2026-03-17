@@ -4,7 +4,7 @@ import { supabase } from './supabaseClient';
 function AddJobModal({session, onClose, onJobAdded}){
     const[company, setCompany] = useState('')
     const[role, setRole] = useState('')
-    const[status, setStatus] = useState('applied')
+    const[status, setStatus] = useState('Applied')
     const[dateApplied, setDateApplied] = useState('')
     const [notes, setNotes] = useState('')
 
@@ -32,8 +32,8 @@ function AddJobModal({session, onClose, onJobAdded}){
         <div className='fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center'>
             <div className='bg-white rounded-xl p-6 w-full max-w-md'>
                 <h2 className='text-lg font-bold mb-4'>Add Job</h2>
-                <input placeholder='company' value={role} onChange={e => setCompany(e.target.value)} className='w-full border rounded-lg px-3 py-2 mb-3'/>
-                <input placeholder='Role' value={company} onChange={e => setRole(e.target.value)} className='w-full border rounded-lg px-3 py-2 mb-3'/>
+                <input placeholder='company' value={company} onChange={e => setCompany(e.target.value)} className='w-full border rounded-lg px-3 py-2 mb-3'/>
+                <input placeholder='Role' value={role} onChange={e => setRole(e.target.value)} className='w-full border rounded-lg px-3 py-2 mb-3'/>
                 <select value={status} onChange={e => setStatus(e.target.value)}className='w-full border rounded-lg px-3 py-2 mb-3'>
                     <option>Applied</option>
                     <option>Interview</option>

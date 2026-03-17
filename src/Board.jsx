@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { supabase } from "./supabaseClient"
+import AddJobModal from "./AddJobModal"
 
 const COLUMNS = ['Applied', 'Interview', 'Offer', 'Rejected']
 
@@ -72,6 +73,14 @@ const handleSignOut = async () => {
                             <p className="font-medium text-gray-800">{job.company}</p>
                             <p className="text-sm text-gray-500">{job.role}</p>
                             <p className="text-xs text-gray-400 mt-1">{job.date_applied}</p>
+                            {showModal &&(
+                                <AddJobModal
+                                session={session}
+                                onClose={() => setShowModal(false)}
+                                onJobAdded={fetchJobs}
+                                />
+                        
+                            )}
                         </div>                                   
                         ))}
                         </div>
