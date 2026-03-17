@@ -6,6 +6,7 @@ const COLUMNS = ['Applied', 'Interview', 'Offer', 'Rejected']
 
 function Board({session}) {
     const[jobs, setJobs] = useState([])
+    const [showModal, setShowModal] = useState(false)
 
     async function fetchJobs(){
     const {data, error} = await supabase
@@ -46,7 +47,13 @@ const handleSignOut = async () => {
                 </div>
             </nav>
             <main  className="p-6">
-
+                <div className="flex justify-end mb-4">
+                <button onClick={() => setShowModal (true)}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"> 
+                    + Add Job
+                </button>
+                    
+                </div>
                 <div className="grid grid-cols-4 gap-4">
                     {COLUMNS.map(column => (
                     <div key={column} className="bg-white rounded-xl  shadow p-4">
