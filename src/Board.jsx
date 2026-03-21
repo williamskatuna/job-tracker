@@ -39,7 +39,7 @@ const handleSignOut = async () => {
 
 
     return (
-        <div className="min-h-screen style=" style={{background: '#0d0d0d'}}>
+        <div className="min-h-screen" style={{background: '#0d0d0d'}}>
             <nav style={{background:'#1a1a1a', borderBottom: '0.5 solid #2c333a'}} className="px-6 py-4 flex justify-between items-center">
                 <h1 className="text-xl font-bold" style={{color:'#b6c2cf'}}>Job Tracker</h1>
                 <div className="flex items-center gap-4">
@@ -96,8 +96,7 @@ const handleSignOut = async () => {
                             <div className="flex justify-between items-center mt-2">
                                 <span className="text-xs" style={{color: '#8c9bab'}}>{job.date_applied}</span>
                                 {job.url && <a href={job.url} target="_blank" rel="noreferrer" onClick={e => e.stopPropagation()} className='text-xs' style={{color:'#378ADD'}}>View listing </a>}
-                            </div>
-                                                      
+                            </div>                               
                         </div>                                   
                         ))}
                         </div>
