@@ -18,6 +18,7 @@ function Login() {
         <button
           onClick={handleGoogleLogin}
           className="flex items-center gap-3 bg-white border border-gray-300 rounded-lg px-6 py-3 text-gray-700 font-medium hover:bg-gray-50 transition"
+          style={{cursor: 'pointer'}}
         >
           Sign in with Google
         </button>

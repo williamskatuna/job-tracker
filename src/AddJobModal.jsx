@@ -97,7 +97,7 @@ const labelStyle = {
                                     className='w-full rounded-lg px-3 py-2'
                                     style={inputStyle}/>
                                 </div>
-                                </div>
+                                
                             
 
                             <div className='mb-5'>
@@ -112,11 +112,12 @@ const labelStyle = {
                             <div className='flex justify-end gap-3'>
                                 <button onClick={onClose}
                                 className='px-4 py-2 text-sm rounded-lg'
-                                style={{color: '#8c9bab'}}>
+                                style={{color: '#8c9bab', cursor: 'pointer'}}>
                                     Cancel
                                 </button>
                                 <button onClick={handleSubmit}
-                                className='bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm'>
+                                className='bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 text-sm'
+                                style={{cursor: 'pointer'}}>
                                     Save
                                 </button>
                             </div>

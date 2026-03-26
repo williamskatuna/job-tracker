@@ -172,11 +172,11 @@ return (
                     { confirmDelete ? (
                         <div className="flex gap-2">
                             <span className="text-sm text-gray-500">Are You Sure?</span>
-                            <button onClick={handleDelete} className="text-red-600 text-sm font-medium">Yes delete</button>
+                            <button onClick={handleDelete} className="text-red-600 text-sm font-medium" style={{cursor: 'pointer'}}>Yes delete</button>
                             <button onClick={() => setConfirmDelete(false)} className="text-gray-500 text-sm">Cancel</button>
                         </div>
                     ) : (
-                        <button onClick={() => setConfirmDelete(true)} className="text-red-500 text-sm hover:text-red-700">Delete</button>
+                        <button onClick={() => setConfirmDelete(true)} className="text-red-500 text-sm hover:text-red-700" style={{cursor: 'pointer'}}>Delete</button>
                     )}
                     <button onClick={handleUpdate} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Save</button>
 
